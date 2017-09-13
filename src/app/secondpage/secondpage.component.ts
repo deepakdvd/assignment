@@ -13,12 +13,15 @@ export class SecondpageComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-
   }
 
-  signUp(){
-    this.router.navigate(['/thirdpage']);
-}
+myname="John Doe";
+myemail="john@requantive.com";
+
+ onSubmit(value: any){
+   console.log(value);
+   this.router.navigate(['/thirdpage']);
+ }
 
 
 }

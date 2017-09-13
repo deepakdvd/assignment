@@ -19,25 +19,24 @@
     <p class="q23 text-center frmpad ">Please confirm or edit your contact information, so that we can notify you when you are approved for our BETA!</p>
      <hr>
      <br>
-     <form onsubmit="signUp()" method="post">
+     <form #userform="ngForm" (ngSubmit)="onSubmit(userform.value)" method="post" ngNativeValidate>
         <div class="form-group frmpad"> 
             <label for="full_name_id" class="control-label">NAME</label>
-            <input type="text" class="form-control frm1" id="" name="yrname" value="John Doe" required  disabled>
+            <input type="text" class="form-control frm1" name="name" [ngModel]="myname"  required readonly >
           </div>
           
           <div class="form-group frmpad"> 
               <label for="full_name_id" class="control-label">EMAIL ADDRESS</label>
-              <input type="text" class="form-control frm1" id="" name="yrname" value="john@requantive.com" required  disabled>
+              <input type="text" class="form-control frm1" name="email" [ngModel]="myemail" required readonly >
             </div>
 
             <div class="form-group frmpad"> 
-                <label for="full_name_id" class="control-label">EMAIL ADDRESS</label>
-                <input type="text" class="form-control frm1" id="phno" name="phno" placeholder="Type a phone number" required>
+                <label for="full_name_id" class="control-label">PHONE NUMBER</label>
+                <input type="text" class="form-control frm1" name="phone"  min="10" required ngModel placeholder="Type a phone number" >
               </div>
               <br><br>
               <hr>
-
-              <button class="btn btn-square btn-lg btn-ghost-green qwer" type="button"  (click)="signUp()">SIGN UP</button>
+              <button class="btn btn-square btn-lg btn-ghost-green qwer" type="submit">SIGN UP</button>
      </form>
   </div>
 </div>
