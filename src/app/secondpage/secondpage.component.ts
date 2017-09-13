@@ -16,19 +16,10 @@ export class SecondpageComponent implements OnInit {
 
   }
 
-  signUp(a){
-    if(a==""){
-      this.router.navigate(['/secondpage']);
-    }
-    else{
-    console.log("adsad");
+  signUp(){
     this.router.navigate(['/thirdpage']);
-  }
 }
 
-  onClickMe(){
-    this.router.navigate(['/thirdpage']);
-  }
 
 }
 
